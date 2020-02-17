@@ -1,0 +1,27 @@
+# Interesting experiments, show what is possible already
+$RecordedText = '
+<speak version="1.0"
+ xmlns="http://www.w3.org/2001/10/synthesis"
+ xml:lang="en-US">
+ I say, <phoneme alphabet="ipa" ph="pi.kɑ.n">pecan</phoneme>.
+ </speak>
+ '
+#  You say, <phoneme alphabet="ipa" ph="pɪˈkɑːn">pecan</phoneme>. 
+ #  I could say Quesada, or I could say 
+ #  <prosody rate="slow"><phoneme alphabet="x-microsoft-ups" ph="K">
+ # kā-ˈsä-ṯẖä
+#  Quesada </phoneme></prosody>
+ 
+ $SpeechSynthesizer.SpeakSsml($RecordedText)
+# <prosody pitch="low"> I can speak in a low pitch, </prosody>, or
+# <prosody pitch="high"> I can speak in a high pitch. </prosody>
+
+# <prosody rate="slow"> I can talk slow. </prosody>, or 
+# <prosody rate="fast"> I can talk fast! </prosody>
+
+# I could say <say-as interpret-as="cardinal"> 2 </say-as> bases, or
+# I could say <say-as interpret-as="ordinal"> 2 </say-as> base.
+
+# I could say habanero, or I could say 
+# <phoneme alphabet="x-microsoft-ups" ph="H AE . B AX . S1 N J EH lng . R O">
+# habanero </phoneme>

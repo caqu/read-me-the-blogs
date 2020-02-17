@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "powershell.exe -file ./narrate-zerohedge.ps1 -url https://www.zerohedge.com/"
+  }
+}
