@@ -33,6 +33,11 @@ for ($i = 0; $i -lt $links.length; $i++) {
   $wav_filepath = "./audio_files/$wav_filename.wav"
   Write-Output $wav_filepath
   $SpeechSynthesizer = New-Object System.Speech.Synthesis.SpeechSynthesizer
+  if ($i % 2) {
+    $SpeechSynthesizer.SelectVoice('Microsoft David Desktop')
+  } else {
+    $SpeechSynthesizer.SelectVoice('Microsoft Zira Desktop')
+  }
   $SpeechSynthesizer.Rate   = 1  # -10 to 10; -10 is slowest, 10 is fastest
   $SpeechSynthesizer.SetOutputToWaveFile($wav_filepath)
   $SpeechSynthesizer.Speak($title)
@@ -40,11 +45,11 @@ for ($i = 0; $i -lt $links.length; $i++) {
   $SpeechSynthesizer.Dispose()
   
   # Output to console
-  $SpeechSynthesizer = New-Object System.Speech.Synthesis.SpeechSynthesizer
-  $SpeechSynthesizer.Rate   = 1  # -10 to 10; -10 is slowest, 10 is fastest
-  $SpeechSynthesizer.Speak($title)
-  $SpeechSynthesizer.Speak($content)
-  
-  Start-Sleep -s 5
+  # $SpeechSynthesizer = New-Object System.Speech.Synthesis.SpeechSynthesizer
+  # $SpeechSynthesizer.Rate   = 1  # -10 to 10; -10 is slowest, 10 is fastest
+  # $SpeechSynthesizer.Speak($title)
+  # $SpeechSynthesizer.Speak($content)
+
+  # Start-Sleep -s 5
 }
 
